@@ -34,7 +34,9 @@
 
   <properties>
     <scmBrowseUrl>https://gitbox.apache.org/repos/asf?a=tree;p=archiva-redback-components-spring-taskqueue.git</scmBrowseUrl>
+    <site.staging.base>${project.basedir}/../site</site.staging.base>
   </properties>
+
   <scm>
     <connection>scm:git:http://gitbox.apache.org/repos/asf/archiva-redback-components-spring-taskqueue.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/archiva-redback-components-spring-taskqueue.git</developerConnection>
@@ -45,14 +47,7 @@
 
   <url>${webUrl}/${project.artifactId}</url>
 
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <url>${siteUrl}/${project.artifactId}</url>
-    </site>
-  </distributionManagement>
-
- <dependencies>
+  <dependencies>
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
