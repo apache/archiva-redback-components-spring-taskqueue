@@ -29,7 +29,7 @@
 
   <version>2.2-SNAPSHOT</version>
   <artifactId>spring-taskqueue</artifactId>
-  <packaging>bundle</packaging>
+
   <name>Spring Task Queue</name>
 
   <properties>
@@ -42,8 +42,6 @@
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/archiva-redback-components-spring-taskqueue.git</developerConnection>
     <url>${scmBrowseUrl}</url>
   </scm>
-
- 
 
   <url>${webUrl}/${project.artifactId}</url>
 
@@ -95,28 +93,6 @@
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <configuration>
-          <instructions>
-            <Export-Package>
-              org.apache.archiva.redback.components.taskqueue*;version=${project.version};-split-package:=merge-first
-            </Export-Package>
-            <Import-Package>
-              javax.annotation,
-              org.apache.commons.lang;version="[2.6,3)",
-              org.slf4j;resolution:=optional
-            </Import-Package>
-          </instructions>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>
