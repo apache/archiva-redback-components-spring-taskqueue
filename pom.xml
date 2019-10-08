@@ -30,7 +30,7 @@
   <version>2.2-SNAPSHOT</version>
   <artifactId>spring-taskqueue</artifactId>
 
-  <name>Spring Task Queue</name>
+  <name>Redback Components :: Spring Task Queue</name>
 
   <properties>
     <scmBrowseUrl>https://gitbox.apache.org/repos/asf?a=tree;p=archiva-redback-components-spring-taskqueue.git</scmBrowseUrl>
@@ -57,16 +57,11 @@
     </dependency>
     <dependency>
       <groupId>javax.annotation</groupId>
-      <artifactId>jsr250-api</artifactId>
+      <artifactId>javax.annotation-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>

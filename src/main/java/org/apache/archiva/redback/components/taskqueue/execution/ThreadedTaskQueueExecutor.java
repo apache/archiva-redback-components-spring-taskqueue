@@ -118,7 +118,7 @@ public class ThreadedTaskQueueExecutor
                         }
                         catch ( TaskExecutionException e )
                         {
-                            logger.error( "Error executing task", e );
+                            logger.error( "Error executing task: {}", e.getMessage(), e );
                         }
                     }
                 } );
@@ -129,7 +129,7 @@ public class ThreadedTaskQueueExecutor
                 }
                 catch ( ExecutionException e )
                 {
-                    logger.error( "Error executing task", e );
+                    logger.error( "Error executing task: {}", e.getMessage(), e );
                 }
             }
 

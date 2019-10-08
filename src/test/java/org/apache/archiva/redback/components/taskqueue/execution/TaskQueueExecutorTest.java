@@ -49,6 +49,10 @@ public class TaskQueueExecutorTest
     private TaskQueueExecutor taskQueueExecutor;
 
 
+    /**
+     * We run both tests in one test method, to avoid the shutdown of the executor
+     *
+     */
     @Test
     public void testTimeoutWithInterrupts()
         throws TaskQueueException, InterruptedException
@@ -59,13 +63,9 @@ public class TaskQueueExecutorTest
 
         assertTrue( task.isCancelled() );
         assertFalse( task.isDone() );
-    }
 
-    @Test
-    public void testTimeoutWithoutInterrupts()
-        throws TaskQueueException, InterruptedException
-    {
-        BuildProjectTask task = putTask( 2 * 1000, true );
+
+        task = putTask( 2 * 1000, true );
 
         waitForExpectedTaskEnd( task );
 
@@ -93,7 +93,7 @@ public class TaskQueueExecutorTest
         // is actually running before starting to count the timeout.
         for ( int i = 0; i < 500; i++ )
         {
-            if ( task.isStarted() )
+            if ( task.wasStarted() )
             {
                 break;
             }

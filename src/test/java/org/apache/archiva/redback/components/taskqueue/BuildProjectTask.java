@@ -19,8 +19,6 @@ package org.apache.archiva.redback.components.taskqueue;
  * under the License.
  */
 
-import org.apache.archiva.redback.components.taskqueue.Task;
-
 /**
  * @author <a href="mailto:trygvis@inamo.no">Trygve Laugst&oslash;l</a>
  *
@@ -42,11 +40,13 @@ public class BuildProjectTask
 
     private long executionTime;
 
-    private boolean cancelled;
+    private volatile boolean cancelled;
 
-    private boolean done;
+    private volatile boolean done;
 
-    private boolean started;
+    private volatile boolean started;
+
+    private volatile boolean wasStarted = false;
 
     private boolean ignoreInterrupts;
 
@@ -142,6 +142,7 @@ public class BuildProjectTask
     public void start()
     {
         this.started = true;
+        this.wasStarted = true;
     }
 
     public void setIgnoreInterrupts( boolean ignore )
@@ -154,4 +155,7 @@ public class BuildProjectTask
         return ignoreInterrupts;
     }
 
+    public boolean wasStarted() {
+        return wasStarted;
+    }
 }
